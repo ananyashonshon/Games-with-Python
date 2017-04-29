@@ -1,0 +1,44 @@
+import random
+guessesused=0
+win=0
+lose=0
+guess=0
+import time
+print ("""This is a guessing game. You will choose the lower an upper limits of the number, as well as the number of guesses you have. After every guess, you will be told if your guess is too high or too low.""")
+time.sleep(1)
+print ("Please note that you will automatically get 1 guess if you choose you want 0 guesses.")
+print ("What would you like the lower boundary to be?")
+lowerlimit=input()
+lowerlimit=int(lowerlimit)
+print ("What would you like the upper boundary to be?")
+upperlimit=input()
+upperlimit=int(upperlimit)
+print ("Great! How many guesses do you want?")
+guesses=input()
+guesses=int(guesses)
+print ("Final question: How many times do you want to play this game?")
+games=input()
+games=int(games)
+for i in range(0,games):
+  guessesused=0
+  number=random.randint(lowerlimit,upperlimit)
+  guess=83098734098734
+  print ("I am thinking of a number between", lowerlimit, "and", upperlimit)
+  while guessesused<=guesses and number!=guess:
+    print ("Make your guess.")
+    guess=input()
+    guess=int(guess)
+    guessesused+=1
+    if guess>number:
+      print ("Your guess is too high.")
+    if guess<number:
+      print ("Your guess is too low.")
+    if guess==number:
+      print ("Your guess is correct.")
+  if guess!=number:
+    print ("Sorry, you lost. The number was", number)
+    lose+=1
+  if guess==number:
+    print ("You won!")
+    win+=1
+print ("You won", win, "game(s) and lost", lose, "game(s)." )
